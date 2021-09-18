@@ -2,6 +2,7 @@ import Header from "./Header/Header";
 import SearchRow from "./Ingredient-Search/SearchRow";
 import Ingredient from "./Ingredient/Ingredient";
 import "./Landing.css";
+import Stepper from "./Stepper/Stepper";
 
 function Landing() {
   return (
@@ -13,7 +14,7 @@ function Landing() {
       </div>
       <SearchRow />
       <div className="landing__bottom">
-        <div>
+        <section className="landing__ingredientsSection">
           <h3>Current Ingredients:</h3>
           <div className="landing__ingredients">
             <Ingredient name="Eggs" />
@@ -23,11 +24,11 @@ function Landing() {
             <Ingredient name="Salt" />
             <Ingredient name="Pepper" />
           </div>
-        </div>
-        <div>
+        </section>
+        <section className="landing__stepper">
           <h3>How many recipes?</h3>
-          {/* <Stepper /> */}
-        </div>
+          <Stepper />
+        </section>
       </div>
     </div>
   );

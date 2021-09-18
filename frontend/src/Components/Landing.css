@@ -19,11 +19,16 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  width: 62vw;
+  width: 70vw;
+  padding-left: 85px;
   font-size: 30px;
 }
 
 .landing__ingredients {
   display: flex;
   flex-wrap: wrap;
+}
+
+.landing__stepper {
+  width: 70%;
 }
