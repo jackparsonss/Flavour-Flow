@@ -1,0 +1,8 @@
+.signUp {
+  background-color: var(--accent-blue);
+  border-radius: 10px;
+}
+
+.signUp:hover {
+  background-color: var(--accent-blue-hover);
+}
