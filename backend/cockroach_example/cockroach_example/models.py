@@ -11,15 +11,25 @@ class User(models.Model):
     created_at = models.DateField()
 
 
+class FoodItem(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    name = models.CharField(max_length=50)
+    aisle = models.CharField(max_length=30)
+    image = models.ImageField()
+
+
 class Ingredient(models.Model):
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
         editable=False
     )
-    name = models.CharField(max_lendth=50)
-    aisle = models.CharField(max_length=30)
-    image = models.ImageField()
+    food_item = models.ForeignKey(
+        FoodItem, on_delete=models.CASCADE)
 
     amount = models.DecimalField(max_digits=5, decimal_places=2)
     unit = models.CharField(max_field=20)
