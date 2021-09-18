@@ -6,7 +6,7 @@ class User(models.Model):
         primary_key=True,
         default=uuid.uuid4,
         editable=False)
-    user_id = models.CharField(max_length=30)
+    email = models.EmailField(max_length=254)
     password = models.CharField(max_length=32)
     created_at = models.DateField()
 
