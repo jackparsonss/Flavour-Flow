@@ -1,4 +1,4 @@
-import Generate from "./Generate";
+import GenerateButton from "./GenerateButton";
 import SearchBar from "./SearchBar";
 import "./SearchRow.css";
 
@@ -6,7 +6,7 @@ function SearchRow() {
   return (
     <div className="searchRow">
       <SearchBar />
-      <Generate />
+      <GenerateButton />
     </div>
   );
 }
