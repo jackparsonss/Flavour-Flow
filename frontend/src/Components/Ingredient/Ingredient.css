@@ -1,0 +1,28 @@
+.ingredient {
+  height: 2em;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 25px;
+  margin-top: 20px;
+  margin-right: 15px;
+  border: 2px solid var(--light-grey);
+  background-color: var(--off-grey);
+  border-radius: 10px;
+  width: max-content;
+}
+
+.ingredient__x {
+  padding: 0 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin: 0 5px;
+  font-size: 20px;
+  transition: all 0.5s ease-out;
+}
+
+.ingredient__x:hover {
+  cursor: pointer;
+  background-color: var(--dark-grey);
+  border-radius: 20%;
+}

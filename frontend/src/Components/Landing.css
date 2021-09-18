@@ -18,9 +18,12 @@
   padding-top: 40px;
   color: white;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  /* max-width: 60%; */
   width: 62vw;
   font-size: 30px;
+}
+
+.landing__ingredients {
+  display: flex;
+  flex-wrap: wrap;
 }
