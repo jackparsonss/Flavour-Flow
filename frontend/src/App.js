@@ -1,6 +1,8 @@
 import "./App.css";
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import SearchBar from "./Components/Ingredient-Search/SearchBar";
+import SearchRow from "./Components/Ingredient-Search/SearchRow";
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
         <Switch>
           <Route path="/">
             <Header />
+            <SearchRow />
           </Route>
         </Switch>
       </Router>
