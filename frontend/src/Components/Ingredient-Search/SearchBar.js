@@ -8,11 +8,12 @@ function SearchBar() {
 
   const handleEnter = (e) => {
     if (e.keyCode === 13) {
-      console.log("VALUE TO ADD: " + e.target.value);
-      setIngredients(
-        (ingredients) => new Set([...ingredients, e.target.value])
-      );
+      const val = e.target.value;
+
+      console.log("VALUE TO ADD: " + val);
+      setIngredients(new Set([...ingredients, val]));
       console.log(ingredients);
+      e.target.value = "";
     }
   };
 
@@ -22,7 +23,7 @@ function SearchBar() {
       <input
         className="searchBar__input"
         placeholder="Search for ingredients..."
-        onKeyUp={handleEnter}
+        onKeyUp={(e) => handleEnter(e)}
         onChange={(e) => {
           setCurrentIngredient(e.target.value);
           console.log(currentIngredient);
