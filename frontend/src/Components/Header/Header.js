@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SignUpButton from "./SignUpButton";
 import { FaRegUserCircle } from "react-icons/fa";
 
-function Header({ loggedIn }) {
+function Header({ loggedIn, authCallback }) {
   return (
     <div className="header">
       <Link to="/" className="header__logo">
@@ -17,7 +17,9 @@ function Header({ loggedIn }) {
           <SignUpButton />
         </div>
       ) : (
-        <FaRegUserCircle className="header__user" size={42}></FaRegUserCircle>
+        <div className="header__user" onClick={() => authCallback(false)}>
+          <FaRegUserCircle size={42} />
+        </div>
       )}
     </div>
   );

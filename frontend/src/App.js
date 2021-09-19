@@ -17,7 +17,7 @@ function App() {
             <Authentication login={false} authCallback={setLoggedIn} />
           </Route>
           <Route path="/">
-            <Landing loggedIn={loggedIn} />
+            <Landing loggedIn={loggedIn} authCallback={setLoggedIn} />
           </Route>
         </Switch>
       </Router>

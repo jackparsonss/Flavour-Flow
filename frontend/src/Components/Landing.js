@@ -7,7 +7,7 @@ import Result from "./Result/Result";
 import Stepper from "./Stepper/Stepper";
 import axios from "axios";
 
-function Landing({ loggedIn }) {
+function Landing({ loggedIn, authCallback }) {
   const [isResults, setIsResults] = useState(false);
   const [ingredients, setIngredients] = useState(new Set());
   const [numberOfRecipes, setNumberOfRecipes] = useState(10);
@@ -37,9 +37,6 @@ function Landing({ loggedIn }) {
   };
 
   const handleGeneratedPressed = () => {
-    console.log(ingredients);
-    console.log("STEPPER: " + numberOfRecipes);
-
     setIsResults(true);
     let url = generateURL();
     axios.get(url).then((response) => {
@@ -49,7 +46,7 @@ function Landing({ loggedIn }) {
 
   return (
     <div className="landing">
-      <Header loggedIn={loggedIn} />
+      <Header loggedIn={loggedIn} authCallback={authCallback} />
       <section className="landing__body">
         <div className="landing__top">
           <h1>Enter Ingredients.</h1>
