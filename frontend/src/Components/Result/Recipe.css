@@ -40,3 +40,7 @@
 .recipe__have {
   min-width: 40%;
 }
+
+.recipe__missing {
+  min-width: 60%;
+}
