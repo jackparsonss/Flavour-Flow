@@ -31,3 +31,7 @@
   background-color: var(--dark-grey);
   border-radius: 20%;
 }
+
+.ingredient__x:active {
+  background-color: var(--accent-blue);
+}
