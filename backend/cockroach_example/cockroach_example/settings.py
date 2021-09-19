@@ -117,9 +117,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'user.User'
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'user.auth.EmailAuthBackend',
-]
+AUTH_USER_MODEL = "cockroach_example.User"
