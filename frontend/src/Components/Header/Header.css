@@ -16,6 +16,11 @@
   color: white;
 }
 
+.header__user {
+  color: white;
+  margin-right: 20px;
+}
+
 .header__account {
   display: flex;
 }

@@ -15,7 +15,7 @@ function App() {
             <Authentication login={false} />
           </Route>
           <Route path="/">
-            <Landing />
+            <Landing loggedIn={true} />
           </Route>
         </Switch>
       </Router>

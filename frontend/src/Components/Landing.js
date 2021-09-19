@@ -7,7 +7,7 @@ import Result from "./Result/Result";
 import Stepper from "./Stepper/Stepper";
 import axios from "axios";
 
-function Landing() {
+function Landing({ loggedIn }) {
   const [isResults, setIsResults] = useState(false);
   const [ingredients, setIngredients] = useState(new Set());
   const [numberOfRecipes, setNumberOfRecipes] = useState(10);
@@ -49,7 +49,7 @@ function Landing() {
 
   return (
     <div className="landing">
-      <Header />
+      <Header loggedIn={loggedIn} />
       <section className="landing__body">
         <div className="landing__top">
           <h1>Enter Ingredients.</h1>
