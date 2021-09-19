@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-function Authentication({ login }) {
+function Authentication({ login, authCallback }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     axios.post("URL_TO_LOGIN", { email, password });
+    authCallback(true);
   };
 
   const handleSignUp = () => {
     axios.post("URL_TO_SIGNUP", { email, password });
+    authCallback(true);
   };
 
   return (
@@ -72,7 +74,7 @@ function Authentication({ login }) {
             className="authenticationButton"
           >
             <Link className="authenticationButton__link" to="/">
-              {login ? "Login" : "Sign up"}
+              {login ? "Sign in" : "Sign up"}
             </Link>
           </button>
         </div>
