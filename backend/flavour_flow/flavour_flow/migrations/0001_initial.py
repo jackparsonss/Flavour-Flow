@@ -14,35 +14,45 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Customers',
-            fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=250)),
-            ],
-        ),
-        migrations.CreateModel(
             name='User',
             fields=[
-                ('username', ),
-                ('email', ),
-                ('password', )
+                ('username', models.CharField(verbose_name='username',max_length=150,unique=True,)),
+                ('email', models.EmailField(verbose_name='email',max_length=255,unique=True,)),
             ],
         ),
         migrations.CreateModel(
-            name='Products',
+            name='FoodItem',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=250)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=18)),
+                ('id', models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False,)),
+                ('name', models.CharField(max_length=50,)),
+                ('aisle', models.CharField(max_length=30,)),
+                ('image', models.ImageField()),
             ],
         ),
         migrations.CreateModel(
-            name='Orders',
+            name='Ingredient',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('subtotal', models.DecimalField(decimal_places=2, max_digits=18)),
-                ('customer', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='flavour_flow.customers')),
-                ('product', models.ManyToManyField(to='flavour_flow.Products')),
+                ('id', models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False,)),
+                ('food_item', models.ForeignKey(on_delete=models.CASCADE, to='flavour_flow.fooditem',)),
+                ('amount', models.DecimalField(max_digits=5, decimal_places=2,)),
+                ('unit', models.CharField(max_length=20)),
+                ('name_amount_unit', models.CharField(max_length=80)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Recipe',
+            fields=[
+                ('id', models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)),
+                ('title', models.CharField(max_length=100)),
+                ('image', models.ImageField()),
+                ('username', models.ManyToManyField(blank=True, to='flavour_flow.user')),
+                ('ingredients', models.ManyToManyField(related_name="ingred", to='flavour_flow.ingredient')),
+                ('ingredient_cnt', models.IntegerField()),
+                ('missed_ingredients', models.ManyToManyField(related_name="missingred", to='flavour_flow.ingredient')),
+                ('missed_ingredient_cnt', models.IntegerField()),
+                ('used_ingredients', models.ManyToManyField(related_name="usedingred", to='flavour_flow.ingredient')),
+                ('used_ingredient_cnt', models.IntegerField()),
+                ('saved_at', models.DateField(blank=True)),
             ],
         ),
     ]

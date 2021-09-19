@@ -27,6 +27,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.username
 
     username = models.CharField(
+        primary_key=True,
         verbose_name='username',
         max_length=150,
         unique=True,
@@ -36,9 +37,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=255,
         unique=True,
     )
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']
     
     objects = UserManager()
 
