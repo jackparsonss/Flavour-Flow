@@ -1,0 +1,118 @@
+.authentication {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.authenticationBox {
+  background-color: var(--off-grey);
+  border: 2px solid var(--light-grey);
+  border-radius: 20px;
+  height: 60vh;
+  width: 85vw;
+  display: flex;
+}
+
+.authenticationLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+.authenticationItem {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  padding-right: 60px;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.authenticationLabel {
+  color: white;
+  font-size: 30px;
+}
+
+.authenticationInput {
+  background: none;
+  border: none;
+  caret-color: white;
+  color: white;
+  font-size: 25px;
+}
+
+.authenticationTitle {
+  color: white;
+  font-size: 50px;
+  max-width: 40%;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.authenticationHeader {
+  display: flex;
+  color: white;
+  font-size: 40px;
+}
+
+.option {
+  cursor: pointer;
+  color: white;
+}
+
+.greyed {
+  color: var(--light-grey);
+}
+
+.selected {
+  border-bottom: 4px solid var(--accent-blue);
+}
+
+.authenticationHeader__item {
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.pizza {
+  color: white;
+}
+
+.vl {
+  border-left: 2px solid var(--light-grey);
+  height: 100%;
+}
+
+.authenticationRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0.8;
+  padding: 4em 4em;
+}
+
+.authenticationButton {
+  background-color: var(--accent-blue);
+  width: 40%;
+  border-radius: 50px;
+  border: none;
+  font-size: 30px;
+  margin-top: 20px;
+  height: 7.5vh;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.authenticationButton__link {
+  text-decoration: none;
+  color: white;
+}
+
+.authenticationButton:hover {
+  background-color: var(--accent-blue-hover);
+  transform: scale(1.1);
+  cursor: pointer;
+}

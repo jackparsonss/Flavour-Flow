@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-import SignUp from "./SignUp";
+import SignUpButton from "./SignUpButton";
 
 function Header() {
   return (
@@ -9,10 +9,10 @@ function Header() {
         <h1>Flavour Flow</h1>
       </Link>
       <div className="header__account">
-        <Link to="/sign-in" className="header__button">
+        <Link to="/signin" className="header__button">
           <h4>Sign in</h4>
         </Link>
-        <SignUp />
+        <SignUpButton />
       </div>
     </div>
   );
