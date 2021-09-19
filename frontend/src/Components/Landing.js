@@ -59,7 +59,7 @@ function Landing() {
       <div className="landing__body">
         <div className="landing__top">
           <h1>Enter Ingredients.</h1>
-          <h1>Get Recipies.</h1>
+          <h1>Get Recipes.</h1>
         </div>
         <SearchRow
           addCallback={setIngredients}
