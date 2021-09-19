@@ -2,7 +2,7 @@
 ### <p align="center"> A Hack The North 2021 Project</p>
 
 <div align="center">
-  <img width="1437" alt="Landing2" src="https://user-images.githubusercontent.com/62918090/133915097-9978e3b8-0cfb-4c13-8f05-7cbb20b6711a.png">
+  <img width="1437" alt="landing page" src="https://user-images.githubusercontent.com/62918090/133915097-9978e3b8-0cfb-4c13-8f05-7cbb20b6711a.png">
 </div>
 
 ---
@@ -11,7 +11,7 @@
 - Flavour Flow is a website where any user can enter any ingredients they have at home and we will generate a variety of foods you can make with these ingredients
 
 <div align="center">
-  <img width="1434" alt="Recipes2" src="https://user-images.githubusercontent.com/62918090/133915110-cf58d7b8-32de-49b4-bd09-54c5aae37fa0.png">
+  <img width="1434" alt="recipes" src="https://user-images.githubusercontent.com/62918090/133915717-ec7a8ccf-01cc-4532-a8c2-df45d786c3da.png">
 </div>
 
 ---
