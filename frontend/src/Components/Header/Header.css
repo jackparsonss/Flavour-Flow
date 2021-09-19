@@ -6,6 +6,8 @@
   align-items: center;
   width: 100vw;
   background-color: #252426;
+  position: fixed;
+  top: 0;
 }
 
 .header__logo {

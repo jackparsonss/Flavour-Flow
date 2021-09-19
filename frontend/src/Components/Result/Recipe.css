@@ -1,0 +1,40 @@
+.recipe {
+  display: flex;
+  width: 80%;
+  border: 2px solid var(--light-grey);
+  height: 30vh;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background-color: var(--off-grey);
+  color: white;
+}
+
+.recipe__image {
+  border-radius: 20px;
+  margin: 15px 15px;
+  width: 30%;
+}
+
+.recipe__body {
+  flex: 0.95;
+}
+
+.recipe__title {
+  font-size: 25px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.recipe__ingredients {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.recipe__have {
+  min-width: 40%;
+}

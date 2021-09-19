@@ -34,6 +34,10 @@
   justify-content: center;
 }
 
+.stepper__count:hover {
+  cursor: pointer;
+}
+
 .stepper__upcount {
   width: 0;
   height: 0;
@@ -43,6 +47,14 @@
   margin-bottom: 5px;
 }
 
+.stepper__upcount:hover {
+  border-bottom: 10px solid white;
+}
+
+.stepper__upcount:active {
+  border-bottom: 10px solid var(--light-grey);
+}
+
 .stepper__downcount {
   width: 0;
   height: 0;
@@ -50,4 +62,12 @@
   border-bottom: 0;
   border-top: 10px solid var(--light-grey);
   margin-top: 5px;
+}
+
+.stepper__downcount:hover {
+  border-top: 10px solid white;
+}
+
+.stepper__downcount:active {
+  border-top: 10px solid var(--light-grey);
 }
