@@ -1,7 +1,11 @@
 import "./GenerateButton.css";
 
-function GenerateButton() {
-  return <button className="generateButton">Generate</button>;
+function GenerateButton(props) {
+  return (
+    <button className="generateButton" onClick={props.handleGenerate}>
+      Generate
+    </button>
+  );
 }
 
 export default GenerateButton;

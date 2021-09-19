@@ -2,11 +2,14 @@ import GenerateButton from "./GenerateButton";
 import SearchBar from "./SearchBar";
 import "./SearchRow.css";
 
-function SearchRow() {
+function SearchRow(props) {
   return (
     <div className="searchRow">
-      <SearchBar />
-      <GenerateButton />
+      <SearchBar
+        addCallback={props.addCallback}
+        ingredients={props.ingredients}
+      />
+      <GenerateButton handleGenerate={props.handleGenerate} />
     </div>
   );
 }

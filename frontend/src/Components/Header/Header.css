@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
+  background-color: #252426;
 }
 
 .header__logo {
