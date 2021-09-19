@@ -3,7 +3,7 @@ import "./Result.css";
 
 function Result({ data }) {
   return (
-    <div className="result" id="result">
+    <section className="result" id="result">
       <h1 className="result__heading">Recipes You Can Make:</h1>
       <div className="result__recipes">
         {data.map((recipe) => (
@@ -15,7 +15,7 @@ function Result({ data }) {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

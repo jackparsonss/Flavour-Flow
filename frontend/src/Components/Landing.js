@@ -11,7 +11,6 @@ function Landing() {
   const [isResults, setIsResults] = useState(false);
   const [ingredients, setIngredients] = useState(new Set());
   const [numberOfRecipes, setNumberOfRecipes] = useState(10);
-
   const [recipeData, setRecipeData] = useState([]);
 
   const removeIngredient = (id) => {
@@ -44,19 +43,14 @@ function Landing() {
     setIsResults(true);
     let url = generateURL();
     axios.get(url).then((response) => {
-      handleData(response.data);
+      setRecipeData(response.data);
     });
-  };
-
-  const handleData = (data) => {
-    console.log(data);
-    setRecipeData(data);
   };
 
   return (
     <div className="landing">
       <Header />
-      <div className="landing__body">
+      <section className="landing__body">
         <div className="landing__top">
           <h1>Enter Ingredients.</h1>
           <h1>Get Recipes.</h1>
@@ -66,7 +60,7 @@ function Landing() {
           ingredients={ingredients}
           handleGenerate={handleGeneratedPressed}
         />
-        <div className="landing__bottom">
+        <section className="landing__bottom">
           <section className="landing__ingredientsSection">
             <h3>Current Ingredients:</h3>
             <div className="landing__ingredients">
@@ -85,8 +79,8 @@ function Landing() {
               number={numberOfRecipes}
             />
           </section>
-        </div>
-      </div>
+        </section>
+      </section>
 
       {isResults ? <Result data={recipeData} /> : <></>}
     </div>
