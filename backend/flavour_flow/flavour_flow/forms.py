@@ -1,5 +1,4 @@
-from backend.cockroach_example.cockroach_example.models import User
-from django.forms import forms
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
@@ -13,8 +12,8 @@ class LoginForm(AuthenticationForm):
        self.fields['password'].widget.attrs['class'] = 'form-control'
 
     email = forms.EmailField(max_length=100)
-    password = forms.CharFiled(
-        label=_("Password"),
+    password = forms.CharField(
+        label=("Password"),
         strip=False,
         widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
         help_text=password_validation.password_validators_help_text_html(),
