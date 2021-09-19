@@ -8,6 +8,7 @@
 ### Tech Stack
 #### Frontend
 - React JS
+- [Spoonacular API](https://spoonacular.com/food-api/docs#Search-Recipes-by-Ingredients)
 
 #### Backend
 - Django 
