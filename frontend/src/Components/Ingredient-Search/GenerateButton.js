@@ -1,8 +1,8 @@
 import "./GenerateButton.css";
 
-function GenerateButton(props) {
+function GenerateButton({ handleGenerate }) {
   return (
-    <button className="generateButton" onClick={props.handleGenerate}>
+    <button className="generateButton" onClick={handleGenerate}>
       Generate
     </button>
   );

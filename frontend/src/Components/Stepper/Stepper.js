@@ -1,16 +1,24 @@
 import "./Stepper.css";
 
-function Stepper(props) {
+function Stepper({ updateCallback, number }) {
   return (
     <div className="stepper">
       <input
         className="stepper__input"
-        placeholder="10"
-        onChange={(e) => props.updateCallback(e.target.value)}
+        placeholder={number}
+        onChange={(e) => updateCallback(e.target.value)}
+        min="1"
+        max="100"
       />
       <div className="stepper__counter">
-        <div className="stepper__upcount"></div>
-        <div className="stepper__downcount"></div>
+        <div
+          className="stepper__upcount stepper__count"
+          onClick={() => updateCallback(number + 1)}
+        ></div>
+        <div
+          className="stepper__downcount stepper__count"
+          onClick={() => updateCallback(number - 1)}
+        ></div>
       </div>
     </div>
   );

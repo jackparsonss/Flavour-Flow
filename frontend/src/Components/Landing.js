@@ -45,7 +45,10 @@ function Landing() {
         </section>
         <section className="landing__stepper">
           <h3>How many recipes?</h3>
-          <Stepper updateCallback={setNumberOfRecipes} />
+          <Stepper
+            updateCallback={setNumberOfRecipes}
+            number={numberOfRecipes}
+          />
         </section>
       </div>
     </div>
