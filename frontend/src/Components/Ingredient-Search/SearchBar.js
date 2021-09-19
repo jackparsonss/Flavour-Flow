@@ -2,8 +2,7 @@ import "./SearchBar.css";
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 
-function SearchBar() {
-  const [ingredients, setIngredients] = useState(new Set());
+function SearchBar(props) {
   const [currentIngredient, setCurrentIngredient] = useState("");
 
   const handleEnter = (e) => {
@@ -11,8 +10,7 @@ function SearchBar() {
       const val = e.target.value;
 
       console.log("VALUE TO ADD: " + val);
-      setIngredients(new Set([...ingredients, val]));
-      console.log(ingredients);
+      props.addCallback(new Set([...props.ingredients, val]));
       e.target.value = "";
     }
   };

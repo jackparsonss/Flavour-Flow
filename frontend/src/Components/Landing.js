@@ -6,19 +6,14 @@ import "./Landing.css";
 import Stepper from "./Stepper/Stepper";
 
 function Landing() {
-  const [ingredients, setIngredients] = useState([
-    "Eggs",
-    "Ketchup",
-    "Bread",
-    "Red Pepper",
-    "Salt",
-    "Pepper",
-  ]);
+  const [ingredients, setIngredients] = useState(
+    new Set(["Eggs", "Ketchup", "Bread", "Red Pepper", "Salt", "Pepper"])
+  );
 
   const removeIngredient = (id) => {
-    const newIngredients = ingredients.filter((item) => item !== id);
+    const newIngredients = [...ingredients].filter((item) => item !== id);
 
-    setIngredients(newIngredients);
+    setIngredients(new Set(newIngredients));
   };
 
   return (
@@ -28,12 +23,12 @@ function Landing() {
         <h1>Enter Ingredients.</h1>
         <h1>Get Recipies.</h1>
       </div>
-      <SearchRow />
+      <SearchRow addCallback={setIngredients} ingredients={ingredients} />
       <div className="landing__bottom">
         <section className="landing__ingredientsSection">
           <h3>Current Ingredients:</h3>
           <div className="landing__ingredients">
-            {ingredients.map((ingredient) => (
+            {[...ingredients].map((ingredient) => (
               <Ingredient name={ingredient} removeCallback={removeIngredient} />
             ))}
           </div>
