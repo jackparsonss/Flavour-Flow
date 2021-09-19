@@ -9,11 +9,17 @@ function Landing() {
   const [ingredients, setIngredients] = useState(
     new Set(["Eggs", "Ketchup", "Bread", "Red Pepper", "Salt", "Pepper"])
   );
+  const [numberOfRecipes, setNumberOfRecipes] = useState(10);
 
   const removeIngredient = (id) => {
     const newIngredients = [...ingredients].filter((item) => item !== id);
 
     setIngredients(new Set(newIngredients));
+  };
+
+  const handleGeneratedPressed = () => {
+    console.log(ingredients);
+    console.log("STEPPER: " + numberOfRecipes);
   };
 
   return (
@@ -23,7 +29,11 @@ function Landing() {
         <h1>Enter Ingredients.</h1>
         <h1>Get Recipies.</h1>
       </div>
-      <SearchRow addCallback={setIngredients} ingredients={ingredients} />
+      <SearchRow
+        addCallback={setIngredients}
+        ingredients={ingredients}
+        handleGenerate={handleGeneratedPressed}
+      />
       <div className="landing__bottom">
         <section className="landing__ingredientsSection">
           <h3>Current Ingredients:</h3>
@@ -35,7 +45,7 @@ function Landing() {
         </section>
         <section className="landing__stepper">
           <h3>How many recipes?</h3>
-          <Stepper />
+          <Stepper updateCallback={setNumberOfRecipes} />
         </section>
       </div>
     </div>

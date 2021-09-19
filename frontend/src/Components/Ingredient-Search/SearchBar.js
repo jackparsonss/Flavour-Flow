@@ -7,10 +7,7 @@ function SearchBar(props) {
 
   const handleEnter = (e) => {
     if (e.keyCode === 13) {
-      const val = e.target.value;
-
-      console.log("VALUE TO ADD: " + val);
-      props.addCallback(new Set([...props.ingredients, val]));
+      props.addCallback(new Set([...props.ingredients, e.target.value]));
       e.target.value = "";
     }
   };
@@ -22,10 +19,7 @@ function SearchBar(props) {
         className="searchBar__input"
         placeholder="Search for ingredients..."
         onKeyUp={(e) => handleEnter(e)}
-        onChange={(e) => {
-          setCurrentIngredient(e.target.value);
-          console.log(currentIngredient);
-        }}
+        onChange={(e) => setCurrentIngredient(e.target.value)}
       />
     </div>
   );

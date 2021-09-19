@@ -9,7 +9,7 @@ function SearchRow(props) {
         addCallback={props.addCallback}
         ingredients={props.ingredients}
       />
-      <GenerateButton />
+      <GenerateButton handleGenerate={props.handleGenerate} />
     </div>
   );
 }
